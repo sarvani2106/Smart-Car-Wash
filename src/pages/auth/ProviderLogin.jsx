@@ -1,0 +1,2 @@
+import AuthLayout from '../../layouts/AuthLayout';
+export default function ProviderLogin(){return <AuthLayout eyebrow="Service provider access" title={<>Ready to <em>shine?</em></>}><form className="auth-form"><label>Email<input type="email" placeholder="you@example.com"/></label><label>Password<input type="password" placeholder="••••••••"/></label><button className="button button-solid">Log in <span>→</span></button></form></AuthLayout>}

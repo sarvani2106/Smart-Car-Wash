@@ -1,0 +1,2 @@
+import AuthLayout from '../../layouts/AuthLayout';
+export default function AdminLogin(){return <AuthLayout eyebrow="Administration" title={<>Welcome <em>back.</em></>}><form className="auth-form"><label>Email<input type="email" placeholder="admin@smartwash.in"/></label><label>Password<input type="password" placeholder="••••••••"/></label><button className="button button-solid">Admin login <span>→</span></button></form></AuthLayout>}
