@@ -1,2 +1,7 @@
-import { Link } from 'react-router-dom'; import AuthLayout from '../../layouts/AuthLayout';
-export default function CustomerSignup(){return <AuthLayout eyebrow="Customer account" title={<>Start your <em>journey.</em></>} footer={<>Already have an account? <Link to="/customer/login">Log in</Link></>}><form className="auth-form"><label>Full name<input placeholder="Your name"/></label><label>Email<input type="email" placeholder="you@example.com"/></label><label>Phone<input type="tel" placeholder="+91 00000 00000"/></label><label>Password<input type="password" placeholder="Create a password"/></label><label>Confirm password<input type="password" placeholder="Repeat your password"/></label><button className="button button-solid">Create account <span>→</span></button></form></AuthLayout>}
+import { Link } from 'react-router-dom';
+import AuthLayout from '../../layouts/AuthLayout';
+import AuthForm from './AuthForm';
+
+export default function CustomerSignup() {
+	return <AuthLayout role="customer" register eyebrow="Customer account" title={<>Start your <em>journey.</em></>} footer={<>Already have an account? <Link to="/auth/customer/login">Log in</Link></>}><AuthForm role="customer" register /></AuthLayout>;
+}

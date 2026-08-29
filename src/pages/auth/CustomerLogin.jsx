@@ -1,2 +1,7 @@
-import { Link } from 'react-router-dom'; import AuthLayout from '../../layouts/AuthLayout';
-export default function CustomerLogin(){return <AuthLayout eyebrow="Customer access" title={<>Welcome <em>back.</em></>} footer={<>New to SmartWash? <Link to="/customer/signup">Create an account</Link></>}><form className="auth-form"><label>Email<input type="email" placeholder="you@example.com"/></label><label>Password<input type="password" placeholder="••••••••"/></label><button className="button button-solid">Log in <span>→</span></button></form><div className="form-divider"><span>or continue with</span></div><div className="auth-options"><button>G <span>Google</span></button><button><span>Use OTP</span> →</button></div></AuthLayout>}
+import { Link } from 'react-router-dom';
+import AuthLayout from '../../layouts/AuthLayout';
+import AuthForm from './AuthForm';
+
+export default function CustomerLogin() {
+  return <AuthLayout role="customer" eyebrow="Customer account" title={<>Welcome <em>back.</em></>} footer={<>New to SmartWash? <Link to="/auth/customer/register">Create an account</Link></>}><AuthForm role="customer" customer /></AuthLayout>;
+}
