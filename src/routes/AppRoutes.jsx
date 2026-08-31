@@ -20,6 +20,10 @@ import CustomerProfile from '../pages/customer/CustomerProfile';
 
 import ProviderDashboard from '../pages/provider/ProviderDashboard';
 import ProviderBookings from '../pages/provider/ProviderBookings';
+import ProviderUpcoming from '../pages/provider/ProviderUpcoming';
+import ProviderCompleted from '../pages/provider/ProviderCompleted';
+import ProviderAvailability from '../pages/provider/ProviderAvailability';
+import ProviderJobDetails from '../pages/provider/ProviderJobDetails';
 import ProviderProfile from '../pages/provider/ProviderProfile';
 
 import AdminDashboard from '../pages/admin/AdminDashboard';
@@ -102,6 +106,26 @@ export default function AppRoutes() {
       <Route
         path="/provider/bookings"
         element={<ProviderBookings />}
+      />
+
+      <Route
+        path="/provider/upcoming"
+        element={<ProviderUpcoming />}
+      />
+
+      <Route
+        path="/provider/completed"
+        element={<ProviderCompleted />}
+      />
+
+      <Route
+        path="/provider/availability"
+        element={<ProviderAvailability />}
+      />
+
+      <Route
+        path="/provider/bookings/:id"
+        element={<ProviderJobDetails />}
       />
 
       <Route
