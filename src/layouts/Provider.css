@@ -1932,3 +1932,991 @@
     font-size: 22px;
   }
 }
+
+/* ==================================================================
+   8.8. PROVIDER PROFILE — REDESIGNED SECTIONS
+================================================================== */
+
+/* ── Profile Banner ──────────────────────────────────────────────── */
+.prf-banner {
+  position: relative;
+  background: linear-gradient(135deg, #0a3028 0%, #145a4a 55%, #1d7a63 100%);
+  border-radius: 18px;
+  padding: 36px 36px 32px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Decorative background circles */
+.prf-banner-deco {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.prf-banner-deco--1 {
+  width: 320px;
+  height: 320px;
+  top: -120px;
+  right: -80px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.prf-banner-deco--2 {
+  width: 180px;
+  height: 180px;
+  bottom: -60px;
+  right: 280px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prf-banner-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Avatar */
+.prf-banner-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.prf-banner-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 2.5px solid rgba(255, 255, 255, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prf-banner-status-ring {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #145a4a;
+}
+
+.prf-banner-status-ring.ring-active   { background: var(--mint); }
+.prf-banner-status-ring.ring-inactive { background: #a09a94; }
+
+/* Identity text */
+.prf-banner-identity {
+  flex: 1;
+}
+
+.prf-banner-eyebrow {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #90cfbf;
+  margin-bottom: 8px;
+}
+
+.prf-banner-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.prf-banner-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.prf-banner-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.prf-chip-icon {
+  font-size: 12px;
+}
+
+.prf-account-status {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.prf-account-status--active {
+  background: rgba(43, 168, 138, 0.22) !important;
+  border-color: rgba(43, 168, 138, 0.4) !important;
+  color: #90cfbf !important;
+}
+
+.prf-account-status--leave {
+  background: rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  color: #fbbf24 !important;
+}
+
+.prf-account-status--inactive {
+  background: rgba(160, 154, 148, 0.2) !important;
+  border-color: rgba(160, 154, 148, 0.35) !important;
+  color: #d0cbc5 !important;
+}
+
+/* Banner edit button */
+.prf-banner-edit-btn {
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.prf-banner-edit-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Performance Stats Grid ──────────────────────────────────────── */
+.prf-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.prf-stat-card {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.prf-stat-card:hover {
+  box-shadow: 0 4px 18px rgba(7, 21, 26, 0.07);
+  border-color: #dce7e3;
+}
+
+.prf-stat-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.prf-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.prf-stat-number.clr-mint { color: var(--mint); }
+
+.prf-stat-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.prf-stat-hint {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ── Two-column info layout ──────────────────────────────────────── */
+.prf-info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.prf-info-card {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+
+.prf-card-header {
+  margin-bottom: 14px;
+}
+
+.prf-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.prf-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.prf-contact-row:last-of-type {
+  border-bottom: none;
+}
+
+.prf-contact-icon {
+  font-size: 15px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.prf-contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.prf-contact-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.prf-contact-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.prf-acct-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.prf-acct-note {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 14px 0 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── Service Proposals Section ───────────────────────────────────── */
+.prf-proposals-section {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  margin-bottom: 20px;
+}
+
+.prf-proposals-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.prf-proposals-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 5px;
+  letter-spacing: -0.02em;
+}
+
+.prf-proposals-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Propose button */
+.prf-propose-btn {
+  flex-shrink: 0;
+  background: var(--green);
+  border: none;
+  color: #fff;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  white-space: nowrap;
+}
+
+.prf-propose-btn:hover {
+  background: #0d4a3e;
+  box-shadow: 0 4px 12px rgba(18, 61, 53, 0.28);
+}
+
+/* Pricing disclaimer */
+.prf-pricing-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0faf7;
+  border: 1px solid #c7e8e0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #187a68;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+/* Filter chips */
+.prf-proposal-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.prf-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #faf9f6;
+  border: 1px solid #e2ded6;
+  color: var(--muted);
+  padding: 7px 14px;
+  border-radius: 100px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.prf-filter-chip:hover {
+  background: #fff;
+  border-color: #c5c0b9;
+  color: var(--ink);
+}
+
+.prf-filter-chip--active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.prf-filter-count {
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1px 6px;
+  border-radius: 100px;
+  font-weight: 800;
+}
+
+.prf-filter-chip:not(.prf-filter-chip--active) .prf-filter-count {
+  background: #e2ded6;
+  color: var(--muted);
+}
+
+/* Proposals grid */
+.prf-proposals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Empty state */
+.prf-proposals-empty {
+  text-align: center;
+  padding: 48px 20px;
+  border: 1px dashed #dce7e3;
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+.prf-empty-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.prf-empty-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.prf-empty-sub {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Individual Proposal Card ────────────────────────────────────── */
+.prf-proposal-card {
+  background: #faf9f6;
+  border: 1px solid #e2ded6;
+  border-radius: 12px;
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.prf-proposal-card:hover {
+  box-shadow: 0 4px 18px rgba(7, 21, 26, 0.06);
+  border-color: #d0cdc7;
+}
+
+.prf-proposal-card--approved {
+  border-left: 3.5px solid #22c55e;
+  background: #f9fffe;
+}
+
+.prf-proposal-card--pending {
+  border-left: 3.5px solid #f59e0b;
+  background: #fffcf5;
+}
+
+.prf-proposal-card--price-revised {
+  border-left: 3.5px solid #6366f1;
+  background: #fafaff;
+}
+
+.prf-proposal-card--rejected {
+  border-left: 3.5px solid #ef4444;
+  background: #fffafa;
+}
+
+.prf-proposal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.prf-proposal-category {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.prf-proposal-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.prf-proposal-desc {
+  font-size: 12px;
+  color: #52605c;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.prf-proposal-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prf-proposal-chip {
+  font-size: 10px;
+  font-weight: 700;
+  color: #52605c;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e2ded6;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Pricing comparison */
+.prf-proposal-pricing {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.prf-price-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+}
+
+.prf-price-divider {
+  width: 1px;
+  background: #e2ded6;
+  flex-shrink: 0;
+}
+
+.prf-price-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.prf-price-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.prf-price-approved {
+  color: #187a68;
+}
+
+.prf-price-pending {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Admin note strip */
+.prf-proposal-admin-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #f3f1fd;
+  border: 1px solid #c7c4f4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: #4338ca;
+  line-height: 1.5;
+}
+
+.prf-admin-note-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ── Status Badge variants (for proposals) ───────────────────────── */
+.svc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.svc-status-pending  { background: #fef3c7; color: #92400e; }
+.svc-status-approved { background: #dcfce7; color: #166534; }
+.svc-status-revised  { background: #ede9fe; color: #4c1d95; }
+.svc-status-rejected { background: #fee2e2; color: #991b1b; }
+
+/* ── Propose New Service Modal ───────────────────────────────────── */
+.prf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 26, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modal-overlay-in 0.2s ease;
+}
+
+@keyframes modal-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.prf-modal {
+  background: #fff;
+  border-radius: 18px;
+  width: min(640px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px 32px 28px;
+  box-shadow: 0 24px 64px rgba(7, 21, 26, 0.24);
+  animation: modal-slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-slide-in {
+  from { transform: translateY(20px) scale(0.97); opacity: 0; }
+  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+.prf-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.prf-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 5px;
+  letter-spacing: -0.02em;
+}
+
+.prf-modal-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.prf-modal-close {
+  background: var(--sand);
+  border: 1px solid #e2ded6;
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.prf-modal-close:hover {
+  background: #e2ded6;
+  color: var(--ink);
+}
+
+.prf-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prf-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.prf-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prf-modal-field--full {
+  grid-column: 1 / -1;
+}
+
+.prf-modal-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.prf-modal-input {
+  border: 1px solid #e2ded6;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  background: #faf9f6;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.prf-modal-input:focus {
+  border-color: var(--mint);
+  background: #fff;
+}
+
+.prf-modal-input.input-error {
+  border-color: #ef4444;
+  background: #fff;
+}
+
+.prf-modal-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23737873' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.prf-modal-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.prf-modal-error {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.prf-modal-pricing-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0faf7;
+  border: 1px solid #c7e8e0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #187a68;
+  line-height: 1.55;
+}
+
+.prf-modal-note-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.prf-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.prf-modal-submit-btn {
+  padding: 12px 24px !important;
+}
+
+/* ── Edit Profile Shell ───────────────────────────────────────────── */
+.prf-edit-shell {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 16px;
+  padding: 32px 32px 28px;
+  max-width: 560px;
+}
+
+.prf-edit-header {
+  margin-bottom: 24px;
+}
+
+.prf-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+/* ── Service Specialties ─────────────────────────────────────────── */
+.prf-specialties-section {
+  background: #fff;
+  border: 1px solid #e2ded6;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 8px;
+}
+
+.prf-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.prf-section-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 3px 0 0;
+  line-height: 1.5;
+}
+
+.prf-specialties-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.prf-specialty-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0faf7;
+  border: 1px solid #c7e8e0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  transition: box-shadow 0.15s;
+}
+
+.prf-specialty-chip:hover {
+  box-shadow: 0 2px 10px rgba(24, 122, 104, 0.12);
+}
+
+.prf-specialty-check {
+  font-size: 14px;
+  color: #187a68;
+  font-weight: 900;
+}
+
+.prf-specialty-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+}
+
+.prf-specialty-cat {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  display: block;
+}
+
+.prf-specialty-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: #187a68;
+  margin-left: 4px;
+}
+
+/* ── Responsive — Profile Redesign ──────────────────────────────── */
+@media (max-width: 900px) {
+  .prf-banner-inner {
+    flex-wrap: wrap;
+  }
+
+  .prf-banner-edit-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .prf-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prf-info-row {
+    grid-template-columns: 1fr;
+  }
+
+  .prf-proposals-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prf-propose-btn {
+    text-align: center;
+  }
+
+  .prf-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prf-modal-field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .prf-banner {
+    padding: 24px 20px;
+  }
+
+  .prf-banner-avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 24px;
+  }
+
+  .prf-banner-name {
+    font-size: 22px;
+  }
+
+  .prf-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .prf-proposals-section {
+    padding: 20px 16px;
+  }
+
+  .prf-proposals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prf-modal {
+    padding: 22px 18px 20px;
+  }
+}
+

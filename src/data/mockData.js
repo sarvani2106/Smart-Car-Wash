@@ -379,6 +379,88 @@ export const getEnrichedBooking = (bookingId) => {
 export const getAllEnrichedBookings = () =>
   bookings.map((b) => getEnrichedBooking(b.id));
 
+// ---------------------------------------------------------------------------
+// 6. SERVICE PROPOSALS
+// Proposals submitted by providers for admin review.
+// status: "pending" | "approved" | "price-revised" | "rejected"
+// adminApprovedPrice is null until admin acts.
+// ---------------------------------------------------------------------------
+export const serviceProposals = [
+  {
+    id: "SPR-0001",
+    providerId: "PRV-7001",
+    name: "Premium Car Wash",
+    category: "Combo",
+    description:
+      "Complete cleaning package including exterior foam wash, rinse, dry wipe, and interior vacuuming. Ideal for regular maintenance.",
+    duration: 60,
+    providerPrice: 599,
+    adminApprovedPrice: 599,
+    status: "approved",
+    submittedOn: "2024-10-01",
+    adminNotes: null,
+  },
+  {
+    id: "SPR-0002",
+    providerId: "PRV-7001",
+    name: "Interior Deep Clean",
+    category: "Interior",
+    description:
+      "Deep vacuuming of all seats and carpets, dashboard polish, door panel wipe-down, and window cleaning from inside.",
+    duration: 45,
+    providerPrice: 399,
+    adminApprovedPrice: null,
+    status: "pending",
+    submittedOn: "2024-11-15",
+    adminNotes: null,
+  },
+  {
+    id: "SPR-0003",
+    providerId: "PRV-7001",
+    name: "Exterior Detailing",
+    category: "Exterior",
+    description:
+      "Multi-step exterior detailing including clay bar treatment, machine polish, and protective wax coat for a showroom finish.",
+    duration: 120,
+    providerPrice: 900,
+    adminApprovedPrice: 699,
+    status: "price-revised",
+    submittedOn: "2024-12-05",
+    adminNotes: "Price revised to align with standard detailing market rates.",
+  },
+  {
+    id: "SPR-0004",
+    providerId: "PRV-7001",
+    name: "Bike Full Wash",
+    category: "Exterior",
+    description:
+      "Complete two-wheeler wash including frame, wheels, and chain cleaning. Quick and convenient.",
+    duration: 20,
+    providerPrice: 149,
+    adminApprovedPrice: null,
+    status: "rejected",
+    submittedOn: "2025-01-10",
+    adminNotes: "Bike services not currently offered in this zone.",
+  },
+  {
+    id: "SPR-0005",
+    providerId: "PRV-7002",
+    name: "Full Car Detailing Plus",
+    category: "Detailing",
+    description:
+      "Premium detailing including engine bay, leather conditioning, and odor removal treatment.",
+    duration: 180,
+    providerPrice: 2999,
+    adminApprovedPrice: 2799,
+    status: "price-revised",
+    submittedOn: "2024-11-20",
+    adminNotes: null,
+  },
+];
+
+export const getProposalsByProviderId = (providerId) =>
+  serviceProposals.filter((p) => p.providerId === providerId);
+
 // Default export bundles everything together for cases where a component
 // wants the whole dataset at once (e.g. an admin "seed/reset data" screen).
 export default {
@@ -387,6 +469,7 @@ export default {
   services,
   providers,
   bookings,
+  serviceProposals,
   getUserById,
   getVehicleById,
   getServiceById,
@@ -395,6 +478,7 @@ export default {
   getVehiclesByCustomerId,
   getBookingsByCustomerId,
   getBookingsByProviderId,
+  getProposalsByProviderId,
   getEnrichedBooking,
   getAllEnrichedBookings,
 };
